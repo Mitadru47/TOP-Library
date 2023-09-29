@@ -1,0 +1,83 @@
+html{
+
+    margin: 5px;
+    border: 1px solid red;
+}
+
+body{
+    border: 1px solid green;
+}
+
+.container1{
+
+    border: 1px solid blue;
+    
+    margin: 5px;
+    /* height: 100vh; */
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.container1 div{
+    margin: 5px;
+}
+
+.sectionA{
+    border: 1px solid brown;
+}
+
+.sectionB{
+    border: 1px solid cornflowerblue
+}
+
+.toolbar{
+    border: 1px solid goldenrod;
+}
+
+#form{
+
+    margin-left: 0;
+    border: 1px solid green;
+
+    justify-content:start;
+    
+    /* display: flex; */
+    display: none;
+}
+
+#form div{
+
+    border: 1px solid rebeccapurple;
+    display: flex;
+}
+
+.library{
+
+    margin: 5px;
+
+    display: flex;
+    flex-direction: column;
+
+    border: 1px solid purple;
+}
+
+.movieRow{
+
+    margin: 5px;
+    display: flex;
+
+    border: 1px solid palevioletred;
+}
+
+.movie{
+
+    width: 200px;
+    height: 200px;
+
+    margin: 5px;
+    border: 1px solid pink;
+}
