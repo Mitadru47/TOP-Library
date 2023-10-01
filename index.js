@@ -13,8 +13,17 @@ function Movie(name, director, duration, release){
 
 let pf = new Movie("Pulp Fiction", "Quentin Tarantino", "2h 34m", "1994");
 let tgbh = new Movie("The Grand Budapest Hotel", "Wes Anderson", "1h 39m", "2014");
+let sf = new Movie("Scarface", "Brian De Palma", "2h 50m", "1983");
+let sc = new Movie("Stagecoach", "John Ford", "1h 36m", "1939");
+let hgf = new Movie("His Girl Friday", "Howard Hawks", "1h 32m", "1940");
+let ts = new Movie("The Shining", "Stanley Kubrick", "2h 26m", "1980");
+let fafdm = new Movie("For a Few Dollars More", "Sergio Leone", "2h 12m", "1965");
+let sl = new Movie("Schindler's List", "Steven Spielberg", "3h 15m", "1993");
+let gf = new Movie("Goodfellas", "Martin Scorsese", "2h 26m", "1990");
+let tg = new Movie("The Godfather", "Francis Ford Coppola", "2h 55m", "1972");
+let br = new Movie("Blade Runner", " Ridley Scott", "1h 57m", "1982");
 
-let myLibrary = [pf,pf,pf,pf,pf,pf,pf,pf,pf,pf,pf];
+let myLibrary = [pf, tgbh, sf, sc, hgf, ts, fafdm, sl, gf, tg, br];
 
 function formToggle(){
 
@@ -80,6 +89,12 @@ function buildLibrary(){
     var movieCount = 0;
     for(var i=0; i<rows; i++){
 
+        if(myLibrary[movieCount] === undefined){
+                
+            movieCount++;
+            break;
+        }
+
         var movieRow = document.createElement("div");
 
         movieRow.classList.add("movieRow");
@@ -144,16 +159,11 @@ function buildLibrary(){
 
                 movie.appendChild(deleteButton);
 
-                // Delete Functionality:
-                
-                var deleteButtons = document.querySelectorAll(".delete");
-                deleteButtons.forEach((deleteButton) => {
+                // Review Button:
 
-                    deleteButton.addEventListener("click", (event) => {
-                        
-                        deleteMovie(event);
-                    }, true);  
-                });
+                // var reviewButton = document.createElement("button");
+
+                // Review Functionality:
 
                 // console.log(myLibrary[movieCount]);
                 movieCount++;
@@ -163,6 +173,19 @@ function buildLibrary(){
             }
         }
     }
+
+    // Delete Functionality:
+                
+    var deleteButtons = document.querySelectorAll(".delete");
+    deleteButtons.forEach((deleteButton) => {
+
+        var flag = false;
+        deleteButton.addEventListener("click", (event) => {
+            
+            deleteMovie(event);
+        }, true);  
+
+    });
 }
 
 function deleteMovie(event){
