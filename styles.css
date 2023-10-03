@@ -100,18 +100,34 @@ button{
     font-family: 'Patrick Hand SC', cursive;
 }
 
-button:hover{
-
-    color: white;
-    background-color: black;
-}
-
 #addButton, #submitButton{
 
     line-height: 3px;
     padding-bottom: 5px;
 
     font-size: 1.5rem;
+}
+
+form button{
+    background-color: #FF6969;
+}
+
+#submitButton{
+    background-color: #F4E869;
+}
+
+.cancelButton{
+    background-color: #FF6969;
+}
+
+.delete{
+    background-color: #F78CA2;
+}
+
+button:hover, #submitButton:hover{
+
+    color: white;
+    background-color: black;
 }
 
 .library{

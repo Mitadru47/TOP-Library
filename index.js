@@ -219,18 +219,26 @@ function buildLibrary(){
             dialog.appendChild(div);
 
             var input = document.createElement("input");
+
             var button = document.createElement("button");
+            var cancelButton = document.createElement("button");
             
             input.setAttribute("id", "rating");
-
             input.placeholder = "0.0 - 10.0"
+
             button.innerText = "Rate";
+            cancelButton.innerText = "Cancel";
             
             div.style.fontSize = "2rem";
+            cancelButton.classList.add("cancelButton");
+
             input.style.marginRight = "5px";
+            button.style.marginRight = "2.5px";
 
             dialog.appendChild(input);
+
             dialog.appendChild(button);
+            dialog.appendChild(cancelButton);
 
             var library = document.querySelector(".library");
             library.appendChild(dialog);
@@ -238,23 +246,25 @@ function buildLibrary(){
             dialog.showModal();
             button.addEventListener("click", ()=>{
 
-                if((Number(input.value) >= 0.0) && (Number(input.value) <= 10.0)){
+                if((Number(input.value) >= 0.0) && (Number(input.value) <= 10.0) && (input.value !== "")){
 
-                    // console.log(input.value);
-                    // console.log(movieId);
-
-                    var buttonTray = document.querySelector("#movie" + movieId + " .buttonTray");
-
-                    rateButton.remove();
-                    var rating = document.createElement("div");
+                    var temp = (Math.round(Number(input.value) * 10))/10;
+                    rateButton.innerText = temp;
                     
-                    rating.innerText = input.value;
-                    buttonTray.appendChild(rating);
-            
+                    rateButton.style.backgroundColor = "#F8FF95";
+                    rateButton.style.border = "0";
+
+                    rateButton.style.fontSize = "1.5rem";
+                    rateButton.style.color = "black";
+
+                    rateButton.style.cursor = "pointer";
+
                     dialog.close();
                 }
 
             }, true);
+
+            cancelButton.addEventListener("click", () => dialog.close(), true);
 
         }, true);
     });
