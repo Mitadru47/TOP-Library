@@ -149,21 +149,32 @@ function buildLibrary(){
                 movieRelease.innerText = myLibrary[movieCount].release;
                 movie.appendChild(movieRelease);
                 
+                // Buttons:
+
+                var buttonTray = document.createElement("div");
+                buttonTray.classList.add("buttonTray");
+
+                movie.appendChild(buttonTray);
+
                 // Delete Button:
 
                 var deleteButton = document.createElement("button");
                 deleteButton.classList.add("delete");
                 
                 deleteButton.setAttribute("id", "button" + movieCount);
-                deleteButton.innerText = "🗑️";
+                deleteButton.innerText = "Remove";
 
-                movie.appendChild(deleteButton);
+                buttonTray.appendChild(deleteButton);
 
                 // Review Button:
 
-                // var reviewButton = document.createElement("button");
+                var reviewButton = document.createElement("button");
+                reviewButton.innerText = "Rate";
 
-                // Review Functionality:
+                reviewButton.classList.add("rate");
+                reviewButton.setAttribute("id", "rating" + movieCount);
+
+                buttonTray.appendChild(reviewButton);
 
                 // console.log(myLibrary[movieCount]);
                 movieCount++;
@@ -185,6 +196,61 @@ function buildLibrary(){
             deleteMovie(event);
         }, true);  
 
+    });
+
+    // Rate Functionality:
+
+    var rateButtons = document.querySelectorAll(".rate");
+    rateButtons.forEach((rateButton) => {
+
+        rateButton.addEventListener("click", (event)=>{
+
+            var movieId = event.target.getAttribute("id").substring(6);
+            // console.log(movieId);
+
+            var dialog = document.createElement("dialog");
+
+            var div = document.createElement("div");
+            div.innerText = myLibrary[movieId].name;
+
+            dialog.appendChild(div);
+
+            var input = document.createElement("input");
+            var button = document.createElement("button");
+            
+            input.setAttribute("id", "rating");
+
+            input.placeholder = "0.0 - 10.0"
+            button.innerText = "Rate";
+
+            dialog.appendChild(input);
+            dialog.appendChild(button);
+
+            var library = document.querySelector(".library");
+            library.appendChild(dialog);
+
+            dialog.showModal();
+            button.addEventListener("click", ()=>{
+
+                if((Number(input.value) >= 0.0) && (Number(input.value) <= 10.0)){
+
+                    // console.log(input.value);
+                    // console.log(movieId);
+
+                    var buttonTray = document.querySelector("#movie" + movieId);
+
+                    rateButton.remove();
+                    var rating = document.createElement("div");
+                    
+                    rating.innerText = input.value;
+                    buttonTray.appendChild(rating);
+            
+                    dialog.close();
+                }
+
+            }, true);
+
+        }, true);
     });
 }
 
