@@ -225,6 +225,9 @@ function buildLibrary(){
 
             input.placeholder = "0.0 - 10.0"
             button.innerText = "Rate";
+            
+            div.style.fontSize = "2rem";
+            input.style.marginRight = "5px";
 
             dialog.appendChild(input);
             dialog.appendChild(button);

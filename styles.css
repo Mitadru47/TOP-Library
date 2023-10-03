@@ -7,9 +7,10 @@ html{
 body{
 
     margin: 0;
-    border: 1px solid green;
+    /* border: 1px solid green; */
 
     font-family: 'Roboto Slab', serif;
+    background-color: #FACBEA;
 }
 
 .container1{
@@ -31,44 +32,86 @@ body{
 }
 
 .sectionA{
-    border: 1px solid brown;
+    /* border: 1px solid brown; */
 }
 
 h1{
+
+    margin-bottom: 5px;
+    margin-left: 5px;
+
     font-size: 3.5rem;
 }
 
 .sectionB{
-    border: 1px solid cornflowerblue
+    /* border: 1px solid cornflowerblue */
 }
 
 .toolbar{
-    border: 1px solid goldenrod;
+
+    padding: 5px;
+    
+    border: 2px dashed black;
+    border-radius: 5px;
 }
 
 #form{
 
-    margin-left: 0;
-    border: 1px solid green;
+    /* margin-left: 0; */
 
-    justify-content:start;
+    border: 2px solid black;
+    border-radius: 5px;
+
+    justify-content: start;
     
     /* display: flex; */
     display: none;
+
+    background-color: #FFE4D6;
 }
 
 #form div{
 
-    border: 1px solid rebeccapurple;
+    /* border: 1px solid rebeccapurple; */
     display: flex;
 }
 
 input{
+
+    border: 2px solid black;
+    border-radius: 5px;
+
+    padding: 5px;
+
+    background-color: #A6FF96;
     font-family: 'Patrick Hand SC', cursive;
 }
 
 button{
+
+    border: 2px solid black;
+
+    border-radius: 5px;
+    background-color: #BC7AF9;
+
+    height: 30px;
+    width: 50px;
+    
     font-family: 'Patrick Hand SC', cursive;
+}
+
+button:hover{
+
+    color: white;
+    background-color: black;
+}
+
+#addButton, #submitButton{
+
+    line-height: 3px;
+    padding-bottom: 5px;
+
+    font-size: 1.5rem;
 }
 
 .library{
@@ -78,7 +121,10 @@ button{
     display: flex;
     flex-direction: column;
 
-    border: 1px solid purple;
+    border: 2px solid black;
+    border-radius: 5px;
+
+    background-color: #BEFFF7;
 }
 
 .movieRow{
@@ -86,7 +132,7 @@ button{
     margin: 5px;
     display: flex;
 
-    border: 1px solid palevioletred;
+    /* border: 1px solid palevioletred; */
 }
 
 .movie{
@@ -95,12 +141,17 @@ button{
     height: 200px;
 
     margin: 5px;
-    border: 1px solid pink;
+    padding: 10px;
+
+    border: 2px solid black;
+    border-radius: 5px;
 
     display: flex;
     flex-direction: column;
 
     justify-content: space-between;
+
+    background-color: #F8FF95;
 }
 
 .movieName{
@@ -127,4 +178,12 @@ button{
 
     display: flex;
     justify-content: space-between;
+}
+
+dialog{
+
+    border: 2px solid black;
+    border-radius: 5px;
+
+    background-color: #FFE4D6       ;
 }
