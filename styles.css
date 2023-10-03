@@ -1,18 +1,22 @@
 html{
 
-    margin: 5px;
-    border: 1px solid red;
+    /* margin: 5px; */
+    /* border: 1px solid red; */
 }
 
 body{
+
+    margin: 0;
     border: 1px solid green;
+
+    font-family: 'Roboto Slab', serif;
 }
 
 .container1{
 
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     
-    margin: 5px;
+    /* margin: 5px; */
     /* height: 100vh; */
 
     display: flex;
@@ -28,6 +32,10 @@ body{
 
 .sectionA{
     border: 1px solid brown;
+}
+
+h1{
+    font-size: 3.5rem;
 }
 
 .sectionB{
@@ -55,6 +63,14 @@ body{
     display: flex;
 }
 
+input{
+    font-family: 'Patrick Hand SC', cursive;
+}
+
+button{
+    font-family: 'Patrick Hand SC', cursive;
+}
+
 .library{
 
     margin: 5px;
@@ -80,4 +96,35 @@ body{
 
     margin: 5px;
     border: 1px solid pink;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-between;
+}
+
+.movieName{
+    font-size: 1.3rem;
+}
+
+.movieDirector{
+
+    font-size: 1rem;
+    font-family: 'Patrick Hand SC', cursive;
+}
+
+.movieDuration{
+    font-size: 0.7rem;
+}
+
+.movieRelease{
+    font-size: 0.7rem;
+}
+
+.buttonTray{
+
+    /* margin-top: ; */
+
+    display: flex;
+    justify-content: space-between;
 }

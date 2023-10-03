@@ -114,8 +114,9 @@ function buildLibrary(){
                 
                 movie.classList.add("movie");
                 movie.setAttribute("id", "movie" + movieCount);
-
+                
                 movieRow.appendChild(movie);
+                var divContainer = document.createElement("div");
                 
                 // Name:
 
@@ -123,7 +124,7 @@ function buildLibrary(){
                 movieName.classList.add("movieName");
                 
                 movieName.innerText = myLibrary[movieCount].name;
-                movie.appendChild(movieName);
+                divContainer.appendChild(movieName);
 
                 // Director:
 
@@ -131,7 +132,7 @@ function buildLibrary(){
                 movieDirector.classList.add("movieDirector");
                 
                 movieDirector.innerText = myLibrary[movieCount].director;
-                movie.appendChild(movieDirector);
+                divContainer.appendChild(movieDirector);
 
                 // Duration:
 
@@ -139,7 +140,7 @@ function buildLibrary(){
                 movieDuration.classList.add("movieDuration");
                 
                 movieDuration.innerText = myLibrary[movieCount].duration;
-                movie.appendChild(movieDuration);
+                divContainer.appendChild(movieDuration);
 
                 // Release:
 
@@ -147,7 +148,9 @@ function buildLibrary(){
                 movieRelease.classList.add("movieRelease");
                 
                 movieRelease.innerText = myLibrary[movieCount].release;
-                movie.appendChild(movieRelease);
+                divContainer.appendChild(movieRelease);
+
+                movie.appendChild(divContainer);
                 
                 // Buttons:
 
@@ -237,7 +240,7 @@ function buildLibrary(){
                     // console.log(input.value);
                     // console.log(movieId);
 
-                    var buttonTray = document.querySelector("#movie" + movieId);
+                    var buttonTray = document.querySelector("#movie" + movieId + " .buttonTray");
 
                     rateButton.remove();
                     var rating = document.createElement("div");
